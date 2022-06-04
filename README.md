@@ -26,7 +26,7 @@ Links para repositórios:
 
 <a href="https://github.com/ThomeGiovana/repositorioGiovanaThome/tree/main/03_AUT_EST_ENTREGA/SEMANA5/curriculo_web_com_jquery"> 20/05/2-22 - Entrega semana 5 - currículo - Repositório</a>
 <br />
-<a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA5/curriculo_web_com_jquery/src/"> 20/05/2-22 - Entrega semana 5 - currículo - GitPage</a>
+<a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA5/curriculo_web_com_jquery/src/public/"> 20/05/2-22 - Entrega semana 5 - currículo - GitPage</a>
 
 <a href="https://github.com/ThomeGiovana/repositorioGiovanaThome/tree/main/03_AUT_EST_ENTREGA/SEMANA5/ex1"> 20/05/2-22 - Entrega semana 5 - exercício 1 - Repositório</a>
 <br />
@@ -39,3 +39,7 @@ Links para repositórios:
 <a href="https://github.com/ThomeGiovana/repositorioGiovanaThome/tree/main/03_AUT_EST_ENTREGA/SEMANA5/ex3"> 20/05/2-22 - Entrega semana 5 - exercício 3 - Repositório</a>
 <br />
 <a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA5/ex3/"> 20/05/2-22 - Entrega semana 5 - exercício 3 - GitPage</a>
+
+<a href="https://github.com/ThomeGiovana/repositorioGiovanaThome/tree/main/03_AUT_EST_ENTREGA/SEMANA6/curriculo_web_com_jquery/src"> 20/05/2-22 - Entrega semana 6 - currículo - Repositório</a>
+<br />
+<a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA6/curriculo_web/src/frontend/"> 20/05/2-22 - Entrega semana 6 - currículo - GitPage</a>

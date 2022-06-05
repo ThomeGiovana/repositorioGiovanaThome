@@ -3,7 +3,7 @@ var salario = parseFloat(input).toFixed(2);
 var imposto;
 
 if(salario>=0 & salario<=2000){
-    console.log("isento");
+    console.log("Isento");
 }
 else if(salario>2000 & salario<=3000){
     imposto = (salario - 2000) * 0.08;

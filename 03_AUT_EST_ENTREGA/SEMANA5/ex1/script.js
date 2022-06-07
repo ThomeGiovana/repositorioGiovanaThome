@@ -16,12 +16,12 @@ function Calcular() {
     }
     if (document.getElementById("divisao").checked) {
         resultado = parseFloat(n1) / parseFloat(n2);
-        document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        document.getElementById("resultado").innerHTML = "Resultado: " + resultado.toFixed(2);
     }
-    // if (document.getElementById("barrabarra").checked) {
-    //     resultado = parseFloat(n1) ? parseFloat(n2);
-    //     document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
-    // }
+    if (document.getElementById("barrabarra").checked) {
+         resultado = parseFloat(n1) / parseFloat(n2);
+         document.getElementById("resultado").innerHTML = "Resultado: " + parseInt(resultado);
+     }
     if (document.getElementById("resto").checked) {
         resultado = parseFloat(n1) % parseFloat(n2);
         document.getElementById("resultado").innerHTML = "Resultado: " + resultado;

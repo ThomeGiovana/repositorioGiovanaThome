@@ -89,7 +89,7 @@ $(function() {
                     <p>Média das provas: " + mediaProvas.toFixed(1) + "</p> \
                     <p>Maior nota das provas: " + maiorNotaProva + "</p> \
                     <p>Menor nota das provas: " + menorNotaProva + "</p> \
-                    <p>Média dos trabalhos: " + mediaTrabalhos + "</p> \
+                    <p>Média dos trabalhos: " + mediaTrabalhos.toFixed(1) + "</p> \
                     <p>Maior nota dos trabalhos: " + maiorNotaTrabalho + "</p> \
                     <p>Menor nota dos trabalhos: " + menorNotaTrabalho + "</p> \
                     ")

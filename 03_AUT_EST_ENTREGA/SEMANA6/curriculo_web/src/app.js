@@ -57,3 +57,4 @@ app.get('/informacoesContato', (req, res) => {
         res.json(row);
     });
 });
+

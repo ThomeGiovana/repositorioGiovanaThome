@@ -65,34 +65,46 @@ app.get('/informacoesContato', (req, res) => {
 });
 
 // DELETE
-app.delete('/competencias/delete', (req, res) => {
+app.post('/competencias/delete', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
+
     var db = new sqlite3.Database(DBPATH);
-    var sql = "DELETE FROM competencias WHERE competencia='Competência teste'";
-    db.run(sql, [], (err, row) => {
-        if (err) {
-            throw err;
-        }
-        else{
-            res.send("Competência teste deletada!");
-        }
-    });
+    let msg;
+	let id = req.query["id"];
+
+	const sql = "DELETE FROM competencias WHERE id=?";
+
+	db.all(sql, [id], (err, rows) => {
+		if (err)
+			throw err;
+		else
+			msg = "Competência removida!";
+        res.send(msg)
+	});
     db.close();
 });
 
 // UPDATE
-app.patch('/competencias/update', (req, res) => {
+//     var sql = "";
+app.post('/competencias/update', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
+
     var db = new sqlite3.Database(DBPATH);
-    var sql = "UPDATE competencias SET competencia='Competência alterada' WHERE competencia='Competência teste 2'";
-    db.run(sql, [], (err, row) => {
-        if (err) {
-            throw err;
-        }
-        res.send("Alteração efetuada com sucesso!");
-    });
+    let msg;
+	let id = req.query["id"];
+    let competencia = req.query["competencia"];
+
+	const sql = "UPDATE competencias SET competencia=? WHERE id=?";
+
+	db.run(sql, [competencia, id], (err, rows) => {
+		if (err)
+			throw err;
+		else
+			msg = "Competência alterada!";
+        res.send(msg)
+	});
     db.close();
 });
 
@@ -100,15 +112,19 @@ app.patch('/competencias/update', (req, res) => {
 app.post('/competencias/create', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = "INSERT INTO competencias (competencia) VALUES ('Competência teste')";
-    db.run(sql, [], (err, row) => {
-        if (err) {
-            throw err;
-        }
-        else{
-            res.send("Competência teste deletada!");
-        }
-    });
+
+    var db = new sqlite3.Database(DBPATH);
+    let msg;
+    let competenciaNova = req.query["competenciaNova"];
+
+	const sql = "INSERT INTO competencias (competencia) VALUES (?)";
+
+	db.run(sql, [competenciaNova], (err, rows) => {
+		if (err)
+			throw err;
+		else
+			msg = "Competência adicionada!";
+        res.send(msg)
+	});
     db.close();
 });

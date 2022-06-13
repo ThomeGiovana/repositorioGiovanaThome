@@ -46,4 +46,8 @@ Links para repositórios:
 
 <a href="https://github.com/ThomeGiovana/repositorioGiovanaThome/tree/main/03_AUT_EST_ENTREGA/SEMANA7/"> 20/05/2-22 - Entrega semana 7 - Exercícios obrigatórios - Repositório</a>
 <br />
-<a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA7/indexExercicios.html"> 20/05/2-22 - Entrega semana 7 - currículo - GitPage</a>
+<a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA7/indexExercicios.html"> 20/05/2-22 - Entrega semana 7 - Exercícios obrigatórios - GitPage</a>
+
+<a href="https://github.com/ThomeGiovana/repositorioGiovanaThome/tree/main/03_AUT_EST_ENTREGA/SEMANA9/"> 20/05/2-22 - Entrega semana 9 - Exercícios obrigatórios - Repositório</a>
+<br />
+<a href="https://thomegiovana.github.io/repositorioGiovanaThome/03_AUT_EST_ENTREGA/SEMANA9/index.html"> 20/05/2-22 - Entrega semana 9 - Exercícios obrigatórios - GitPage</a>

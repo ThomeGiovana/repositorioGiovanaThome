@@ -2,18 +2,18 @@ function NavbarIndex() {
     $('.nav-bar-function').append(' \
         <ul class="nav-bar"> \
             <li class="nav-bar-item"> \
-                <a class="nav-bar-link" href="/frontend/HTML/informacoes_pessoais.html">Informações \
+                <a class="nav-bar-link" href="/HTML/informacoes_pessoais.html">Informações \
                     pessoais</a> \
             </li> \
             <li class="nav-bar-item"> \
-                <a class="nav-bar-link" href="/frontend/HTML/informacoes_contato.html">Informações de \
+                <a class="nav-bar-link" href="/HTML/informacoes_contato.html">Informações de \
                     contato</a> \
             </li> \
             <li class="nav-bar-item"> \
-                <a class="nav-bar-link" href="/frontend/HTML/formacao_academica.html">Formação acadêmica</a> \
+                <a class="nav-bar-link" href="/HTML/formacao_academica.html">Formação acadêmica</a> \
             </li> \
             <li class="nav-bar-item"> \
-                <a class="nav-bar-link" href="/frontend/HTML/competencias.html">Competências</a> \
+                <a class="nav-bar-link" href="/HTML/competencias.html">Competências</a> \
             </li> \
         </ul>'
     );

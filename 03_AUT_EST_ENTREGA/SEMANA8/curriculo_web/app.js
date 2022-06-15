@@ -1,4 +1,5 @@
 // recursos
+const { urlencoded } = require('express');
 const express = require('express');
 const res = require('express/lib/response');
 const sqlite3 = require('sqlite3');
@@ -6,7 +7,8 @@ const sqlite3 = require('sqlite3');
 // cria o servidor 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // parse do BODY
+app.use(express.urlencoded({ extended: false})); // parse da URL (query string)
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -18,21 +20,6 @@ app.listen(port, hostname, () => {
 });
 
 const DBPATH = 'backend/banco.db';
-
-// READ
-app.get('/competencias/read', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    var db = new sqlite3.Database(DBPATH);
-    var sql = 'SELECT * FROM competencias';
-    db.all(sql, [], (err, row) => {
-        if (err) {
-            throw err;
-        }
-        res.json(row);
-    });
-    db.close();
-});
 
 // READ
 app.get('/formacaoAcademica', (req, res) => {
@@ -64,48 +51,64 @@ app.get('/informacoesContato', (req, res) => {
     db.close();
 });
 
+// READ
+app.get('/competencias/read', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var db = new sqlite3.Database(DBPATH);
+    var sql = 'SELECT * FROM competencias';
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        };
+        // res.json(row);
+        for(i=0; i<rows.length; i++){
+            res.write('<div class="bloco"> <p class="info">' + rows[i].competencia + '</p> </div>');
+        };
+        db.close();
+        res.end();
+    });
+});
+
 // DELETE
 app.post('/competencias/delete', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     var db = new sqlite3.Database(DBPATH);
-    let msg;
-	let id = req.query["id"];
+	let competencia = req.body.competencia;
 
-	const sql = "DELETE FROM competencias WHERE id=?";
+	const sql = "DELETE FROM competencias WHERE competencia=?";
 
-	db.all(sql, [id], (err, rows) => {
+	db.all(sql, [competencia], (err, rows) => {
 		if (err)
 			throw err;
 		else
-			msg = "Competência removida!";
-        res.send(msg)
+        res.write('<div style="text-align: center;"><a href="/HTML/competencias.html">VOLTAR</a></div>');
+        db.close();
+        res.end();
 	});
-    db.close();
 });
 
 // UPDATE
-//     var sql = "";
 app.post('/competencias/update', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     var db = new sqlite3.Database(DBPATH);
-    let msg;
-	let id = req.query["id"];
-    let competencia = req.query["competencia"];
+	let oldCompetencia = req.body.oldCompetencia;
+    let competencia = req.body.competencia;
 
-	const sql = "UPDATE competencias SET competencia=? WHERE id=?";
+	const sql = "UPDATE competencias SET competencia=? WHERE competencia=?";
 
-	db.run(sql, [competencia, id], (err, rows) => {
+	db.run(sql, [competencia, oldCompetencia], (err, rows) => {
 		if (err)
 			throw err;
 		else
-			msg = "Competência alterada!";
-        res.send(msg)
+            res.write('<div style="text-align: center;"><a href="/HTML/competencias.html">VOLTAR</a></div>');
+        db.close();
+        res.end();
 	});
-    db.close();
 });
 
 // CREATE
@@ -115,7 +118,7 @@ app.post('/competencias/create', (req, res) => {
 
     var db = new sqlite3.Database(DBPATH);
     let msg;
-    let competenciaNova = req.query["competenciaNova"];
+    let competenciaNova = req.body.competenciaNova;
 
 	const sql = "INSERT INTO competencias (competencia) VALUES (?)";
 
@@ -123,8 +126,8 @@ app.post('/competencias/create', (req, res) => {
 		if (err)
 			throw err;
 		else
-			msg = "Competência adicionada!";
-        res.send(msg)
+            res.write('<div style="text-align: center;"><a href="/HTML/competencias.html">VOLTAR</a></div>');
+        db.close();
+        res.end();    
 	});
-    db.close();
 });

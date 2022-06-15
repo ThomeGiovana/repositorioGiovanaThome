@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-  	var sql = 'SELECT * FROM tbUser ORDER BY title COLLATE NOCASE ';
+  	var sql = 'SELECT * FROM tbUser';
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -33,7 +33,8 @@ app.get('/', (req, res) => {
 		for (var i = 0; i < rows.length; i++){
 			var linha = rows[i];
 			res.write('<div style="padding: 10px"><span style="font-size: 120%;">' + rows[i].userId + '</span><span style="color: blue; width: 300px">'+ rows[i].title +'</span></div>');
-		  }
+		}
+		
 	});
 	db.close(); // Fecha o banco
 });
@@ -65,6 +66,7 @@ app.post('/userinsert', urlencodedParser, (req, res) => {
 		if (err) {
 		    throw err;
 		}
+		res.write('<a href="">VOLTAR</a>');
 	});
 	db.close();
 	res.end();

@@ -32,7 +32,7 @@ h1 {
     padding: 2px;
 }
 
-#bloco {
+.bloco {
     padding: 0;
     margin: 0;
     text-align: center;
@@ -75,5 +75,11 @@ h1 {
 }
 
 #easter_egg {
+    text-align: center;
+}
+
+#iframe {
+    width: 50%;
+    height: 400px;
     text-align: center;
 }

@@ -12,14 +12,14 @@ app.use(express.urlencoded({ extended: false})); // parse da URL (query string)
 
 const hostname = '127.0.0.1';
 // const port = 3000;
-app.use(express.static("frontend"));
+app.use(express.static("./frontend"));
 
 // "ouve" a conexão com o servidor 
 app.listen(process.env.PORT, () => {
     console.log(`Server running`);
 });
 
-const DBPATH = 'backend/banco.db';
+const DBPATH = 'banco.db';
 
 // READ
 app.get('/formacaoAcademica', (req, res) => {

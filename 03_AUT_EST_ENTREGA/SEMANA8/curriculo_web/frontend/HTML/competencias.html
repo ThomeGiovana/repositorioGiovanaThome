@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script src="../JS/script.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>competencias</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+</head>
+
+<body onload="Navbar()">
+    <h1>Currículo WEB</h1>
+    <div id="teste" class="nav-bar-function"></div>
+
+    <div class="bloco">
+        <iframe id="iframe" src="/competencias/read" style="border: none;"></iframe>
+    </div>
+
+    <div class="bloco">
+        <form action="/competencias/create" method="post">
+            Gostaria de recomendar uma competência?<br>
+            <input type="text" name="competenciaNova" value="">
+            <input type="submit" value="Recomendar">
+        </form>
+    </div>
+
+    <div class="bloco">
+        <form action="/competencias/delete" method="post">
+            Gostaria de excluir uma competência?<br>
+            <input type="text" name="competencia" value="">
+            <input type="submit" value="Excluir">
+        </form>
+    </div>
+
+    <div class="bloco">
+        <form action="/competencias/update" method="post">
+            Gostaria de editar uma competência?<br>
+            <input type="text" name="oldCompetencia" placeholder="oldCompetencia" value="">
+            <input type="text" name="competencia" placeholder="Competencia" value="">
+            <input type="submit" value="Atualizar">
+        </form>
+    </div>
+
+</body>
+
+</html>
